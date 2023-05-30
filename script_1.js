@@ -1,5 +1,7 @@
 const textArea = document.querySelector(".texto");
 const mensaje = document.querySelector(".mensaje");
+/* const copia = document.querySelector(".copiar");
+copia.style.display = "none" */
 
 /* La letra "e" es convertida para "enter"
 La letra "i" es convertida para "imes"
@@ -11,7 +13,7 @@ function botonEncriptar (){
     const textoEncriptado = encriptar(textArea.value)
     mensaje.value = textoEncriptado
     textArea.value = "";
-    mensaje.style.background = "none";
+    mensaje.style.backgroundImage = "none";
 }
 
 function encriptar(stringEncriptada){
@@ -26,3 +28,27 @@ function encriptar(stringEncriptada){
     return stringEncriptada
 }
 
+function botonDesencriptar (){
+    const textoEncriptado = desencriptar(textArea.value)
+    mensaje.value = textoEncriptado
+    textArea.value = "";
+}
+
+function desencriptar(stringDesencriptada){
+    let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+    stringDesencriptada = stringDesencriptada.toLowerCase()
+
+    for(let i = 0; i < matrizCodigo.length; i++){
+        if(stringDesencriptada.includes(matrizCodigo[i][1])){
+            stringDesencriptada = stringDesencriptada.replaceAll(matrizCodigo[i][1], matrizCodigo[i][0])
+        }
+    }
+    return stringDesencriptada
+}
+
+/* function copiar{
+    mensaje.select();
+    navigator.clipboard.writeText(mensaje.value);
+    mensaje.value = "";
+    alert("Texto copiado")
+} */
