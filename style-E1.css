@@ -113,9 +113,7 @@ button{
 .mensaje:focus{
     outline: none;
 }
-picture{
-    position: relative;
-}
+
 /* .mensaje::placeholder{
     font-family: 'Times New Roman';
     font-style: normal;
