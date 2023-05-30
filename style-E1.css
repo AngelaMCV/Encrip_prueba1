@@ -102,7 +102,7 @@ button{
 .mensaje{
     background-image: url("/imagenesE/Muñeco.png");
     background-repeat: no-repeat;
-    background-color: rgb(240, 198, 240);
+    background-color: violet;
     border: none;
     text-align: center;
     font-family: 'Times New Roman';
@@ -112,6 +112,9 @@ button{
 }
 .mensaje:focus{
     outline: none;
+}
+picture{
+    position: relative;
 }
 /* .mensaje::placeholder{
     font-family: 'Times New Roman';

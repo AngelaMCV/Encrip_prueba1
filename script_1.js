@@ -1,13 +1,24 @@
 const textArea = document.querySelector(".texto");
 const mensaje = document.querySelector(".mensaje");
-/* const copia = document.querySelector(".copiar");
-copia.style.display = "none" */
+/* const copia = document.querySelector(".botonCopiar");
+copia.style.display = "none";  */ 
 
 /* La letra "e" es convertida para "enter"
 La letra "i" es convertida para "imes"
 La letra "a" es convertida para "ai"
 La letra "o" es convertida para "ober"
 La letra "u" es convertida para "ufat" */
+
+function validarTexto(){
+    let textoEscrito = document.querySelector(".texto").value;
+    let validador = textoEscrito.match(/^[a-z]*$/);
+
+    if(!validador || validador === 0) { 
+        alert("Sólo son permitidas letras minusculas y sin acentos");
+        location.reload();
+        return true;
+    }
+}
 
 function botonEncriptar (){
     const textoEncriptado = encriptar(textArea.value)
@@ -51,4 +62,4 @@ function desencriptar(stringDesencriptada){
     navigator.clipboard.writeText(mensaje.value);
     mensaje.value = "";
     alert("Texto copiado")
-} */
+}  */
